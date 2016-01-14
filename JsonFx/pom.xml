@@ -1,8 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.spaceape.jsonfx</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <artifactId>jsonfx-for-unity3d</artifactId>
     <packaging>pom</packaging>
 
@@ -78,7 +77,7 @@
                                 <configuration>
                                     <tasks>
                                         <exec dir="${project.basedir}" executable="xbuild">
-                                            <arg value="JsonFx.Json.sln"/>
+                                            <arg value="JsonFx.Json.sln" />
                                         </exec>
                                     </tasks>
                                 </configuration>
@@ -108,8 +107,8 @@
                                 <configuration>
                                     <tasks>
                                         <exec dir="${project.basedir}" executable="xbuild">
-                                            <arg value="/p:Configuration=Release"/>
-                                            <arg value="JsonFx.Json.sln"/>
+                                            <arg value="/p:Configuration=Release" />
+                                            <arg value="JsonFx.Json.sln" />
                                         </exec>
                                     </tasks>
                                 </configuration>
