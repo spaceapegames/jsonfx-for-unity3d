@@ -5,3 +5,6 @@ JsonFx/JsonFx.Json/bin
 JsonFx/JsonFx.Json/obj
 JsonFx/JsonFx.Json.UnitTests/bin
 JsonFx/JsonFx.Json.UnitTests/obj
+**/target
+**/.idea
+**/*.iml
