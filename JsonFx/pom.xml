@@ -121,6 +121,13 @@
         </profile>
     </profiles>
 
+    <scm>
+        <connection>scm:git:git@github.com:spaceapegames/jsonfx-for-unity3d.git</connection>
+        <tag>scm:git:git@github.com:spaceapegames/jsonfx-for-unity3d.git</tag>
+        <url>scm:git:git@github.com:spaceapegames/jsonfx-for-unity3d.git</url>
+        <developerConnection>scm:git:git@github.com:spaceapegames/jsonfx-for-unity3d.git</developerConnection>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>spaceapegames</id>
