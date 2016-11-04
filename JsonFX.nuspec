@@ -5,7 +5,7 @@
     <id>SpaceApe.JsonFx</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>SpaceApeGames</authors>
@@ -22,7 +22,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <!-- Any details about this particular release -->
-    <releaseNotes>Setting target to .Net 2.0</releaseNotes>
+    <releaseNotes>Adding .net 4.0</releaseNotes>
 
     <!-- The description can be used in package manager UI. Note that the 
          nuget.org gallery uses information you add in the portal. -->
@@ -41,6 +41,8 @@
   <files>
     <file src="JsonFX/JsonFx.Json/bin/Release/lib/net20/JsonFx.Json.dll" target="lib/net20" />
     <file src="JsonFX/JsonFx.Json/bin/Release/lib/net20/JsonFx.Json.dll.mdb" target="lib/net20" />
-    <file src="JsonFX/JsonFx.Json/bin/Release/JsonFx.Json.XML" target="lib/net20" />
+    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net40/JsonFx.Json.dll" target="lib/net40" />
+    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net40/JsonFx.Json.dll.mdb" target="lib/net40" />
+    <file src="JsonFX/JsonFx.Json/bin/Release/JsonFx.Json.XML" />
   </files>
 </package>
