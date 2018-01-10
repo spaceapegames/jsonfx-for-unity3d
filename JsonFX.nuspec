@@ -39,12 +39,8 @@
   </metadata>
 
   <files>
-    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net20/JsonFx.Json.dll" target="lib/net20" />
-    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net20/JsonFx.Json.dll.mdb" target="lib/net20" />
     <file src="JsonFX/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.dll" target="lib/net35" />
     <file src="JsonFX/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.dll.mdb" target="lib/net35" />
-    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net40/JsonFx.Json.dll" target="lib/net40" />
-    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net40/JsonFx.Json.dll.mdb" target="lib/net40" />
     <file src="JsonFX/JsonFx.Json/bin/Release/JsonFx.Json.XML" />
   </files>
 </package>
