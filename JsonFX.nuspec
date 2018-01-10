@@ -40,7 +40,7 @@
 
   <files>
     <file src="JsonFX/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.dll" target="lib/net35" />
-    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.dll.pdb" target="lib/net35" />
+    <file src="JsonFX/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.pdb" target="lib/net35" />
     <file src="JsonFX/JsonFx.Json/bin/Release/JsonFx.Json.XML" />
   </files>
 </package>
