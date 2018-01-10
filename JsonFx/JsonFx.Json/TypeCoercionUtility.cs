@@ -33,6 +33,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 
 namespace JsonFx.Json
@@ -103,6 +104,7 @@ namespace JsonFx.Json
 		internal object ProcessTypeHint(
 			IDictionary result,
 			string typeInfo,
+			string typeAssemblyName,
 			out Type objectType,
 			out Dictionary<string, MemberInfo> memberMap)
 		{
@@ -113,7 +115,26 @@ namespace JsonFx.Json
 				return result;
 			}
 
-			Type hintedType = Type.GetType(typeInfo, false);
+			Type hintedType;
+			if (string.IsNullOrEmpty(typeAssemblyName))
+			{
+				hintedType = Type.GetType(typeInfo, false);
+			}
+			else
+			{
+				hintedType = Type.GetType(typeInfo + ","+typeAssemblyName, false);
+			}
+			if (hintedType == null)
+			{
+				foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+				{
+					hintedType = assembly.GetType(typeInfo, false);
+					if (hintedType != null)
+					{
+						break;
+					}
+				}
+			}
 			if (hintedType == null)
 			{
 				objectType = null;

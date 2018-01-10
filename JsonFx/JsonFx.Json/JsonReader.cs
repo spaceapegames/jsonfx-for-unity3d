@@ -508,12 +508,7 @@ namespace JsonFx.Json
 				{
 					if (objectType == null && this.Settings.IsTypeHintName(memberName))
 					{
-						var typestr = value as string;
-						if(!string.IsNullOrEmpty(Settings.TypeHintAssembly))
-						{
-							typestr += ", " + Settings.TypeHintAssembly;
-						}
-						result = this.Settings.Coercion.ProcessTypeHint((IDictionary)result, typestr, out objectType, out memberMap);
+						result = this.Settings.Coercion.ProcessTypeHint((IDictionary)result, value as string, Settings.TypeHintAssembly, out objectType, out memberMap);
 					}
 					else
 					{
@@ -528,24 +523,7 @@ namespace JsonFx.Json
 				}
 				else if (this.Settings.IsTypeHintName(memberName))
 				{
-					var typestr = value as string;
-					if(!string.IsNullOrEmpty(Settings.TypeHintAssembly))
-					{
-						typestr += ", " + Settings.TypeHintAssembly;
-					}
-					var prevDict = result as IDictionary;
-					result = this.Settings.Coercion.ProcessTypeHint(null, typestr, out objectType, out memberMap);
-					if (prevDict != null)
-					{
-						foreach(var key in prevDict.Keys)
-						{
-							var f = objectType.GetField(key as string);
-							if(f != null)
-							{
-								f.SetValue(result, prevDict[key]);
-							}
-						}
-					}
+					result = this.Settings.Coercion.ProcessTypeHint(null, value as string, Settings.TypeHintAssembly, out objectType, out memberMap);
 				}
 				else
 				{

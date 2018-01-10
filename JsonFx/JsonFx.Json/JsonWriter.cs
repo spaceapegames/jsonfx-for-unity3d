@@ -1120,7 +1120,7 @@ namespace JsonFx.Json
 				}
 
 				// serialize public properties
-				PropertyInfo[] properties = type.GetProperties();
+				PropertyInfo[] properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
 				FieldInfo[] fields = type.GetFields(BindingFlags.Instance | BindingFlags.Public);
 				if (settings.SortMembers)
 				{
