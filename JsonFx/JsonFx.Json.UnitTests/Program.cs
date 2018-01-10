@@ -37,6 +37,7 @@ using JsonFx.Json;
 
 namespace JsonFx.Json.Test
 {
+    /*
 	class Program
 	{
 		#region Constants
@@ -90,4 +91,5 @@ namespace JsonFx.Json.Test
 
 		#endregion Program Entry
 	}
+    */
 }
