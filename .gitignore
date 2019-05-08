@@ -8,3 +8,4 @@ JsonFx/JsonFx.Json.UnitTests/obj
 **/target
 **/.idea
 **/*.iml
+.DS_Store
