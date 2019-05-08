@@ -9,3 +9,4 @@ JsonFx/JsonFx.Json.UnitTests/obj
 **/.idea
 **/*.iml
 .DS_Store
+*.xml
