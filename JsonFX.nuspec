@@ -5,7 +5,7 @@
     <id>SpaceApe.JsonFx</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>SpaceApeGames</authors>
@@ -41,6 +41,8 @@
   <files>
     <file src="JsonFx/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.dll" target="lib/net35" />
     <file src="JsonFx/JsonFx.Json/bin/Release/lib/net35/JsonFx.Json.*db" target="lib/net35" />
+    <file src="JsonFx/JsonFx.Json/bin/Release/lib/netstandard2.0/JsonFx.Json.dll" target="lib/netstandard2.0" />
+    <file src="JsonFx/JsonFx.Json/bin/Release/lib/netstandard2.0/JsonFx.Json.*db" target="lib/netstandard2.0" />
     <file src="JsonFx/JsonFx.Json/bin/Release/JsonFx.Json.XML" />
   </files>
 </package>
