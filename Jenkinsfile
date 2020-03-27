@@ -4,6 +4,6 @@
 
 sharedCodePipeline(
     projectSubDirectory: "JsonFx",
-    projectConfigs: [ "Release", "Release-net35" ],
+    projectConfigs: [ "Release" ],
     testDlls: [ "JsonFx/JsonFx.Json.UnitTests/bin/Release/JsonFx.Json.UnitTests.dll" ]
 )
