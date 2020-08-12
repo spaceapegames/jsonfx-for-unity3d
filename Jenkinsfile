@@ -24,8 +24,8 @@ pipeline {
 
       steps {
         loadProperties([propertiesFile: "Jenkins.properties"])
-
-        setupSharedBuild()
+        setBuildNumber()
+        logBuildData()
       }
     }
 
