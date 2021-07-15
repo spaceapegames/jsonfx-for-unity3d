@@ -88,6 +88,17 @@ namespace JsonFx.Json
 			set { this.typeHintAssembly = value; }
 		}
 
+		/// <summary>
+		/// Custom function that can be used as a factory method for creating instances of types as they are read in.
+		/// If you require custom constructor parameters, set this to create the deserialized objects.
+		/// If null is returned from this function, the default constructor will be used.
+		/// </summary>
+		public Func<Type, object> CreateInstance
+		{
+			get => Coercion.createInstance;
+			set => Coercion.createInstance = value;
+		}
+
 		#endregion Properties
 
 		#region Methods

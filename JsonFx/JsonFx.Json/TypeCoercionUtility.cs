@@ -55,6 +55,7 @@ namespace JsonFx.Json
 
 		private Dictionary<Type, Dictionary<string, MemberInfo>> memberMapCache;
 		private bool allowNullValueTypes = true;
+		internal Func<Type, Object> createInstance;
 
 		#endregion Fields
 
@@ -148,6 +149,24 @@ namespace JsonFx.Json
 
 		internal Object InstantiateObject(Type objectType, out Dictionary<string, MemberInfo> memberMap)
 		{
+			Object result = null;
+			if (createInstance != null)
+			{
+				result = createInstance(objectType);
+			}
+
+			if (result == null)
+			{
+				result = InstantiateObjectWithReflectiveDefaultConstructor(objectType);
+			}
+
+			memberMap = GetMemberMap (objectType);
+			
+			return result;
+		}
+
+		private static object InstantiateObjectWithReflectiveDefaultConstructor(Type objectType)
+		{
 			if (objectType.IsInterface || objectType.IsAbstract || objectType.IsValueType)
 			{
 				throw new JsonTypeCoercionException(
@@ -160,6 +179,7 @@ namespace JsonFx.Json
 				throw new JsonTypeCoercionException(
 					String.Format(TypeCoercionUtility.ErrorDefaultCtor, objectType.FullName));
 			}
+
 			Object result;
 			try
 			{
@@ -172,14 +192,13 @@ namespace JsonFx.Json
 				{
 					throw new JsonTypeCoercionException(ex.InnerException.Message, ex.InnerException);
 				}
+
 				throw new JsonTypeCoercionException("Error instantiating " + objectType.FullName, ex);
 			}
 
-			memberMap = GetMemberMap (objectType);
-			
 			return result;
 		}
-		
+
 		/** Returns a member map if suitable for the object type.
 		 * Dictionary types will make this method return null
 		 */
