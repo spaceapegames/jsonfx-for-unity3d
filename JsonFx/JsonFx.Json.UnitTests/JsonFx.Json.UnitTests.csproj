@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <RootNamespace>JsonFx.Json</RootNamespace>
+    <RootNamespace>JsonFx.Json.Tests</RootNamespace>
     <AssemblyName>JsonFx.Json.UnitTests</AssemblyName>
     <PackageId>SpaceApe.JsonFx.UnitTests</PackageId>
   </PropertyGroup>

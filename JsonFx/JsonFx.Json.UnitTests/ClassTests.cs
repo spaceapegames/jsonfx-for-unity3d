@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using JsonFx.Json.Tests;
 
-namespace JsonFx.Json.UnitTests
+namespace JsonFx.Json.Tests
 {
 	public class FieldsClass {
 		public int anInt;

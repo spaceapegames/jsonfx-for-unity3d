@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using JsonFx.Json.UnitTests;
 using NUnit.Framework;
 
-namespace JsonFx.Json
+namespace JsonFx.Json.Tests
 {
     [TestFixture()]
     class SurrogateTest
