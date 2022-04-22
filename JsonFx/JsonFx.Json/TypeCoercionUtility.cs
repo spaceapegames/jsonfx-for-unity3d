@@ -673,18 +673,18 @@ namespace JsonFx.Json
 		{
 			ArrayList target = new ArrayList();
 
-			object nullProxy = null;
+			object nullPlaceholder = null;
 			foreach (object item in value)
 			{
 				var coercedItem = this.CoerceType(elementType, item);
 				//ToArray below throws an exception if you try and put a null into an array of structs, just make a 'default' one 
 				if (elementType.IsValueType && coercedItem == null)
 				{
-					if (nullProxy == null)
+					if (nullPlaceholder == null)
 					{
-						nullProxy = InstantiateObject(elementType, out _);
+						nullPlaceholder = InstantiateObject(elementType, out _);
 					}
-					coercedItem = nullProxy;
+					coercedItem = nullPlaceholder;
 				}
 				target.Add(coercedItem);
 			}
