@@ -33,7 +33,7 @@ using System.IO;
 
 using JsonFx.Json;
 
-namespace JsonFx.Json.Test.UnitTests
+namespace JsonFx.Json.Tests.UnitTests
 {
 	public class JsonText
 	{

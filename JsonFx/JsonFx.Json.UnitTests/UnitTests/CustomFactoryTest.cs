@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace JsonFx.Json.Test.UnitTests
+namespace JsonFx.Json.Tests.UnitTests
 {
     [TestFixture]
     public class CustomFactoryTest

@@ -38,7 +38,7 @@ using System.Text;
 
 using JsonFx.Json;
 
-namespace JsonFx.Json.Test.UnitTests
+namespace JsonFx.Json.Tests.UnitTests
 {
 	/* A set of objects used to test strongly-typed serialization */
 
