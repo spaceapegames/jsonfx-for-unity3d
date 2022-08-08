@@ -76,6 +76,7 @@ pipeline {
                 testSettings.platform = 'Android'
                 testSettings.testPlatform = 'playmode'
                 testSettings.unityWarmup = true
+				testSettings.runUnitTestsSynchronously = true
 
                 unityUnitTests(testSettings)
               }
