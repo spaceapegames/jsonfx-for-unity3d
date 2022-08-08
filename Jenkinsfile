@@ -74,9 +74,8 @@ pipeline {
                 testSettings.globalBuildId = "${env.BUILD_NUMBER_SUFFIX}"
                 testSettings.environmentVariables = getEnvironmentVariables(testSettings)
                 testSettings.platform = 'Android'
-                testSettings.testPlatform = 'playmode'
+                testSettings.testPlatform = 'editmode'
                 testSettings.unityWarmup = true
-				testSettings.runUnitTestsSynchronously = false
 
 				determineNodeOS(testSettings)
                 unityUnitTests(testSettings)
