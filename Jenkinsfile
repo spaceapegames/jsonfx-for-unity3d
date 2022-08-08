@@ -58,6 +58,28 @@ pipeline {
             )
           }
         }
+		
+		stage("Run Unity Tests") {
+            steps {
+              script {
+				sh ( script:"./copy-dlls-to-unity.sh" )
+			  
+                def testSettings = [:]
+                testSettings.environment = "${env.ENVIRONMENT}"
+                testSettings.debugBuild = "${env.DEBUG_BUILD}"
+                testSettings.unityVersion = "${env.UNITY_VERSION}"
+                testSettings.projectPath = "${env.UNITY_PROJECT_PATH}"
+                testSettings.buildNumberPrefix = "${env.BUILD_NUMBER_PREFIX}"
+                testSettings.globalBuildId = "${env.BUILD_NUMBER_SUFFIX}"
+                testSettings.environmentVariables = getEnvironmentVariables(testSettings)
+                testSettings.platform = 'Android'
+                testSettings.testPlatform = 'playmode'
+                testSettings.unityWarmup = true
+
+                unityUnitTests(testSettings)
+              }
+            }
+        }
 
         stage("Publish Nuget"){
           steps{
