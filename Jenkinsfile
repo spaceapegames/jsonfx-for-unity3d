@@ -76,7 +76,7 @@ pipeline {
                 testSettings.platform = 'Android'
                 testSettings.testPlatform = 'playmode'
                 testSettings.unityWarmup = true
-				testSettings.runUnitTestsSynchronously = true
+				testSettings.runUnitTestsSynchronously = false
 
 				determineNodeOS(testSettings)
                 unityUnitTests(testSettings)
