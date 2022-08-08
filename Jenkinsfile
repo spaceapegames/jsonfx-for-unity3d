@@ -78,6 +78,7 @@ pipeline {
                 testSettings.unityWarmup = true
 				testSettings.runUnitTestsSynchronously = true
 
+				determineNodeOS(testSettings)
                 unityUnitTests(testSettings)
               }
             }
