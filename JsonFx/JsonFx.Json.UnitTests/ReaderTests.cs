@@ -12,7 +12,9 @@ namespace JsonFx.Json.Tests
             // This threw an InvalidCastException in Unity 2021 but not when testing in 2019.
             // It also did not throw when running the tests directly in this sln.
             var deserialized = JsonReader.Deserialize("[[\"id\",\"name\"],[1,\"myname\"]]");
+
             Assert.IsNotNull(deserialized);
+            Assert.IsInstanceOf<object[][]>(deserialized);
         }
     }
 }

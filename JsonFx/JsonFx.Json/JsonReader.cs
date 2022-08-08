@@ -644,11 +644,46 @@ namespace JsonFx.Json
 
 			// TODO: optimize to reduce number of conversions on lists
 
-			if (arrayItemType != null && arrayItemType != typeof(object))
+			if (arrayItemType != null)
 			{
-				// if all items are of same type then convert to array of that type
-				return jsArray.ToArray(arrayItemType);
-			}
+				if (arrayItemType == typeof(object[]))
+                {
+                    bool hasObjectArray = false;
+                    bool hasNonObjectArray = false;
+                    foreach (var obj in jsArray)
+                    {
+                        if (obj.GetType() == typeof(object[]))
+                        {
+							hasObjectArray = true;
+                        }
+						else if (obj.GetType().IsArray)
+                        {
+							hasNonObjectArray = true;
+                        }
+                    }
+
+					// Special handling for converting an object[] that contains both an object[] and a non-object[].
+                    // if we don't, Unity 2021 throws InvalidCastException.
+                    // It seems the ArrayList.ToArray function got more strict.
+                    if (hasObjectArray && hasNonObjectArray)
+                    {
+                        List<object[]> results = new List<object[]>();
+                        foreach (var obj in jsArray)
+                        {
+                            results.Add((object[])obj);
+                        }
+						return results.ToArray();
+                    }
+
+					return jsArray.ToArray(arrayItemType);
+				}
+                
+                if (arrayItemType != typeof(object))
+                {
+                    // if all items are of same type then convert to array of that type
+                    return jsArray.ToArray(arrayItemType);
+                }
+            }
 
 			// convert to an object array for consistency
 			return jsArray.ToArray();
