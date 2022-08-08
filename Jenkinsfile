@@ -61,9 +61,9 @@ pipeline {
 		
 		stage("Run Unity Tests") {
             steps {
-              script {
-				sh ( script:"./copy-dlls-to-unity.sh" )
-			  
+			  sh ( script:"./copy-dlls-to-unity.sh" )
+              
+			  script {
                 def testSettings = [:]
                 testSettings.environment = "${env.ENVIRONMENT}"
                 testSettings.debugBuild = "${env.DEBUG_BUILD}"
