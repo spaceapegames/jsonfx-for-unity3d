@@ -61,6 +61,8 @@ pipeline {
 		
 		stage("Run Unity Tests") {
             steps {
+			  sh ( "echo $PWD" )
+			  sh ( "chmod +x ./copy-dlls-to-unity.sh" )
 			  sh ( script:"./copy-dlls-to-unity.sh" )
               
 			  script {
