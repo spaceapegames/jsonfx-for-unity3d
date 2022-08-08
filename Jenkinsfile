@@ -75,7 +75,7 @@ pipeline {
                 testSettings.environmentVariables = getEnvironmentVariables(testSettings)
                 testSettings.platform = 'Android'
                 testSettings.testPlatform = 'editmode'
-                testSettings.unityWarmup = true
+                testSettings.unityWarmup = false
 
 				determineNodeOS(testSettings)
                 unityUnitTests(testSettings)
