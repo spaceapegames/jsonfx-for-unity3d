@@ -11,3 +11,4 @@ JsonFx/packages
 **/*.iml
 .DS_Store
 *.xml
+JsonFx-Unity/UserSettings

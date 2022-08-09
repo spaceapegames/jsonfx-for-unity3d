@@ -58,6 +58,30 @@ pipeline {
             )
           }
         }
+		
+		stage("Run Unity Tests") {
+            steps {
+			  sh ( "chmod +x ./copy-dlls-to-unity.sh" )
+			  sh ( script:"./copy-dlls-to-unity.sh" )
+              
+			  script {
+                def testSettings = [:]
+                testSettings.environment = "${env.ENVIRONMENT}"
+                testSettings.debugBuild = "${env.DEBUG_BUILD}"
+                testSettings.unityVersion = "${env.UNITY_VERSION}"
+                testSettings.projectPath = "${env.UNITY_PROJECT_PATH}"
+                testSettings.buildNumberPrefix = "${env.BUILD_NUMBER_PREFIX}"
+                testSettings.globalBuildId = "${env.BUILD_NUMBER_SUFFIX}"
+                testSettings.environmentVariables = getEnvironmentVariables(testSettings)
+                testSettings.platform = 'Android'
+                testSettings.testPlatform = 'editmode'
+                testSettings.unityWarmup = false
+
+				determineNodeOS(testSettings)
+                unityUnitTests(testSettings)
+              }
+            }
+        }
 
         stage("Publish Nuget"){
           steps{
